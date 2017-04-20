@@ -1,0 +1,286 @@
+.anno-seletedtools[tooltip]:hover:after {
+    content: attr(tooltip);
+    padding: 4px 8px;
+    color: #333;
+    position: absolute;
+    left:auto;
+    right: 105px;
+    top: 5px;
+    z-index: 20;
+    font-size: 15px;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #222;
+    -webkit-box-shadow: 0px 0px 4px #222;
+    box-shadow: 0px 0px 4px #222;
+    background-color: #B0EEBA;
+    background-image: -moz-linear-gradient(top, #B0EEBA, #88CC7F);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #B0EEBA), color-stop(1, #88CC7F));
+    background-image: -webkit-linear-gradient(top, #B0EEBA, #88CC7F);
+    background-image: -moz-linear-gradient(top, #B0EEBA, #88CC7F);
+    background-image: -ms-linear-gradient(top, #B0EEBA, #88CC7F);
+    background-image: -o-linear-gradient(top, #B0EEBA, #88CC7F);
+}
+#anno_this {
+    position: absolute;
+    display: inline-block;
+    border: #eeeeee solid 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    height: 200px;
+    border-radius: 0px;
+    display: none;
+    background-color: #f0f0f0;
+    -moz-box-shadow: 2px 0 14px 6px #656565;
+    -webkit-box-shadow: 2px 0 14px 6px #656565;
+    box-shadow: 2px 0 14px 6px #656565;
+}
+#anno_tmpcanvas {
+    position: absolute;
+    left: 15px; right: 0;
+    bottom: 0; top: 15px;
+    cursor: crosshair;
+    z-index: 21;
+}
+#annomodalcanvas {
+    position: absolute;
+    left: 15px;
+    z-index: 20;
+    cursor: crosshair;
+}
+.anno-seletedtools {
+    margin-left: 7px;
+    margin-bottom: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 0px;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center;
+    background-color: #DBDBDB;
+    border: 2px solid #fff;
+    display: inline-block;
+}
+.anno-seletedtools:hover {
+    cursor: pointer;
+}
+#annomodaltools {
+    float: right;
+    width: 100px;
+    height: 100%;
+    left: auto;
+    right: 0;
+    position: relative;
+}
+.annomodalpen {
+    background-image: url('images/icons_pen.svg');
+}
+.annopenfill {
+    background-image: url('images/icons_pen30.svg');
+}
+.annomodalcirc {
+    background-image: url('images/icons_circ.svg');
+}
+.annocircfill {
+    background-image: url('images/icons_circ30.svg');
+}
+.annomodalrect {
+    // background-size: 35px;
+    background-image: url('images/icons_rect.svg');
+}
+.annorectfill{
+    background-image: url('images/icons_rect30.svg');
+}
+#annomodalline {
+    background-image: url('images/icons_line.svg');
+}
+#annomodaltext {
+    background-image: url('images/icons_text.svg');
+}
+#annomodalundo {
+    background-image: url('images/icons_undo.svg');
+    background-color: #f0f0f0;
+}
+#annomodalredo {
+    background-image: url('images/icons_redo.svg');
+    background-color: #f0f0f0;
+}
+#annomodalclear {
+    background-image: url('images/icons_eraze.svg');
+}
+#annomodalok {
+    background-image: url('images/icons_close.svg');
+    background-color: transparent;
+}
+#annomodalbw {
+    background-image: url('images/icons_bw.svg');
+}
+#annomodaldowncanvas {
+    background-image: url('images/icons_anno.svg');
+}
+#annomodalsave {
+    background-image: url('images/icons_save.svg');
+}
+#annomodaldownload {
+    background-image: url('images/icons_initial.svg');
+}
+#annomodalnext {
+    margin-top: 40px;
+    background-image: url('images/icons_next.svg');
+    margin-bottom: 0;
+}
+#annomodalprev {
+    margin-top: 40px;
+    background-image: url('images/icons_prev.svg');
+    margin-bottom: 0;
+}
+#annononepart {
+    background-image: url('images/icons_mag.svg');
+}
+#annocolorselector {
+    background-image: url('images/icons_color.svg');
+    background-color: #11BC0F;
+    background-size: 35px;
+}
+#annonlinew1 {
+    background-image: url('images/icons_line1.svg');
+}
+#annonlinew2 {
+    background-image: url('images/icons_line2.svg');
+}
+#annonlinew3 {
+    background-image: url('images/icons_line3.svg');
+}
+#annonlinew4 {
+    background-image: url('images/icons_line4.svg');
+}
+#annonlinew5 {
+    background-image: url('images/icons_line5.svg');
+}
+#annonlinew6 {
+    background-image: url('images/icons_line6.svg');
+}
+#annonlinew7 {
+    background-image: url('images/icons_line7.svg');
+}
+#annonlinew8 {
+    background-image: url('images/icons_line8.svg');
+}
+#annonlinew9 {
+    background-image: url('images/icons_line9.svg');
+}
+#annonlinew10 {
+    background-image: url('images/icons_line10.svg');
+}
+#annonlinew11 {
+    background-image: url('images/icons_line11.svg');
+}
+#annonlinew12 {
+    background-image: url('images/icons_line12.svg');
+}
+
+#annomodalcanvas hover {
+    cursor: crosshair;
+}
+#annomodalbackdiv {
+    background-color: #FFFFFF;
+    float: left;
+    width: 100%;
+}
+#annozoom {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow: auto;
+    z-index: 20000;
+    width: 95%;
+    height: 95%;
+    border: 1px solid #000000;
+    background-color: #FFF;
+    padding: 15px;
+}
+.anno-none {
+    background-color: #f0f0f0;
+}
+.anno-none-np {
+    background-color: #f0f0f0;
+    margin-bottom: 0;
+}
+.anno-mb {
+    margin-top: auto;
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0;
+}
+#anno_note{
+    background-color: #19B316;
+    padding: 15px;
+    width: 170px;
+    color:#fff;
+    font-size: 16px;
+    z-index: 20;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+    left:40%;
+    position: absolute;
+    border:2px solid #fff;
+    display: none;
+}
+#anno_clor {
+
+    border: 1px solid #4F4F4F;
+    width: 506px;
+    position: absolute;
+    z-index: 200;
+    background-color: #ffffff;
+    left: -527px;
+    display: none;
+    margin:0 0 0 0;
+    padding: 0;
+    padding-top: 2px;
+    margin-left: 0;
+
+}
+#anno_clor_select{
+    padding: 0;
+    padding-left: 2px;
+    margin: 0 0 0 0;
+    line-height: 0px;
+}
+#anno_clor_select li {
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+    margin-left: 0;
+    margin-top: 0;
+    cursor:pointer;
+    margin-bottom: 2px;
+    // border: 1px solid #BFBFBF;
+}
+#annoloader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height:150px;
+    margin-top: -75px;
+    margin-left: -75px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background-size: 50px;
+    background-image: url('images/annoloader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    display:none;
+
+}

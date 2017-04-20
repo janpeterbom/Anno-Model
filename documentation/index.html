@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Anno Modal - Documentation - Demo - Support</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <div id="container">
+               <!--  <a id="buy-now" href="">Buy now</a> -->
+               <div class="intro" id="intro">
+                <span>Anno Modal <sup>1.0.0</sup></span>a Image Lightbox that provides a simple and nice way to create modal image dialogs that makes annotation possible.
+            </div>
+            <div id="features">
+                &#8226;&nbsp;&nbsp;Native Javascript: no Jquery, MooTools, Dojo, etc needed&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Easy to implement&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Fast&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Ready in minutes&nbsp;&nbsp;&#8226;&nbsp;&nbsp;PHP script included&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Ai file included&nbsp;&nbsp;&#8226;&nbsp;&nbsp;For all pages
+            </div>
+            <br><br>
+                <div id="nav">
+                <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#options">Options</a>
+
+               </div>
+                <div class="section"><img src="images/1.png" alt=""></div>
+                <div class="section">Key features : <span></span> </div>
+                <div class="block">
+                    <ul>
+                        <li>Easy installation</li>
+                        <li>Native No Jquery, MooTools, Dojo, etc needed</li>
+                        <li>Fast</li>
+                        <li>Annotate images with ease</li>
+                        <li>Original image is untouched, annotated layer is saved separately</li>
+                        <li>Browse easily between images on your page while making annotations</li>
+                        <li>Auto save</li>
+                        <li>use signature feature to capture signatures</li>
+                        <li>zoom to the original size</li>
+                        <li>Touch & mouse driven</li>
+                        <li>Lot of Options to control the Anno Modal</li>
+                    </ul>
+                </div>
+
+                <div class="section">Installation<a name="installation"></a></div>
+                <div class="block">
+                        <br>Upload these to your server: <br>
+                        <ul>
+                            <li><strong>css folder</strong> including the sub folder "images" </li>
+                            <li><strong>js folder</strong> ( or at least the anno_modal_min.js) </li>
+                            <li><strong>php folder</strong> (or at least the "anno_modal.php" script )  </li>
+                            <li><strong>uploaded/images folder</strong> or create your own location folder on your server (this must have the proper rights (777) so that script may create the images there!)</li>
+                        </ul>
+                        <br><br>The use of the Anno Modal Script in your webpage.<br>
+<textarea class="rawcode" style="width:100%; height:500px; padding:10px;line-height: 16px;border:0">
+
+<!-- Anno_modal stylesheet add to the head of the document-->
+<link rel="stylesheet" href="css/anno_modal.css" type="text/css"/>
+
+<!-- Annote image (add class "avnno-this")-->
+<img src="Path-To-ThumbNail" alt="" filename="Path-To-Image" class="anno-this">
+
+<!-- Annote image add an id that will be used to store the annotated image (add annoid="xxxxxxxxxx")-->
+<img src="Path-To-ThumbNail"  alt="" filename="Path-To-Image" annoid="xxxxxxxxxx" class="anno-this">
+
+<!-- SIGNATURE -->
+<img src="Path-To-ThumbNail"  alt="" filename="Path-To-Image" signatureid="xxxxxxxxxx" class="anno-this">
+
+
+<!-- Main anno_modal JS script file add to the end of the document-->
+<script type="text/javascript" src="js/anno_modal_min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    anno_modal.init({
+        preloadAnotation:true,
+        onSave:function(i){
+            document.querySelectorAll(".anno-this")[i.index].setAttribute('src',i.imagedata);
+        }
+    });
+  });
+</script>
+</textarea>
+                </div>
+                <div class="section" style="margin-top:30px">Options<a name="options"></a></div>
+                <table class="tftable" border="1">
+                <tr>
+                        <td>Basic init</td>
+                        <td >
+<pre><code class="javascript">
+anno_modal.init({
+    Maxsize:900,
+    drawColor:"#E6050B",
+    textFontSize : "20px",
+    closeondblclick : false,
+    selectedTool:"Pencil",
+    preloadAnotation:true,
+    uploadScript:"php/anno_modal.php",
+    uploadDir:"../uploaded/images/",
+    annoImgDir:"uploaded/images/",
+onSave:function(i){
+   document.querySelectorAll(".anno-this")[i.index].setAttribute('src',i.imagedata);
+}
+});
+</code></pre>
+                        </td>
+                        <td>This is an example of the scripts thats init the anno_modal.</td>
+                </tr>
+                <tr>
+                        <th style="width:10%">Init Property</th>
+                        <th style="width:45%">Default</th>
+                        <th style="width:45%">Description</th></tr>
+                <tr>
+                        <td>Maxsize</td>
+                        <td>900</td>
+                        <td>The size of the image in the anno_modal window all in px ( Do not add "px" after the number) every number under 500 will be ignored and set to 500</td>
+                </tr>
+                <tr>
+                        <td>drawColor</td>
+                        <td>"#E6050B"</td>
+                        <td>The color red to use as the standard to draw with.</td>
+                </tr>
+                <tr>
+                        <td>lineWidth</td>
+                        <td>3</td>
+                        <td>The draw width of the pen, cicle etc... tools all in px ( Do not add "px" after the number)</td>
+                </tr>
+                <tr>
+                        <td>textFont</td>
+                        <td>"Arial"</td>
+                        <td>The font used</td>
+                </tr>
+                <tr>
+                        <td>textOutline</td>
+                        <td>false</td>
+                        <td>add a outline for better readebility</td>
+                </tr>
+                <tr>
+                        <td>textFontSize</td>
+                        <td>"20px"</td>
+                        <td>Font size (add px to the end)</td>
+                </tr>
+                <tr>
+                        <td>selectedTool</td>
+                        <td>"Pencil"</td>
+                        <td>Options are:<br>
+                        "Pencil"<br>
+                        "Text"<br>
+                        "Line"<br>
+                        "Circle"<br>
+                        "Rectangle"<br>
+
+
+                        </td>
+                </tr>
+                <tr>
+                        <td>uploadScript</td>
+                        <td>"php/saveupload.php"</td>
+                        <td>Location of the php script that stores the created "png" pictures</td>
+                </tr>
+                <tr>
+                        <td>uploadDir</td>
+                        <td>"../uploaded/images/"</td>
+                        <td>Location of the directory of the created "png" pictures <strong> From the perspective of the "saveupload.php" script.  Make sure you add the trailing "/" </strong></td>
+                </tr>
+                <tr>
+                        <td>annoImgDir</td>
+                        <td>"uploaded/images/"</td>
+                        <td>Location of the directory of the created "png" pictures <strong> From the perspective of your page.     Make sure you add the trailing "/" </strong></td>
+                </tr>
+                <tr>
+                        <td>saveannoFlatten</td>
+                        <td>false</td>
+                        <td>setting this property to "false make pictures of only the drawm layer and NOT the image it self. (this keeps the created images small)<br><br>Setting this property to "true" flattens the the image and drawn layer as one. The original image will not been replaced instead a new image will be created at the max width of the canvas.</strong></td>
+                </tr>
+                <tr>
+                        <td>preloadAnotation</td>
+                        <td>false</td>
+                        <td>setting this property to "true" will after pageload replace all the images with the annotated stored images if these exist.</td>
+                </tr>
+                <tr>
+                        <td>closeondblclick</td>
+                        <td>false</td>
+                        <td>setting this property to "true" will make a dblclick on the canvas to save and close the canvas.</td>
+                </tr>
+                <tr>
+                        <th style="width:10%">Call Back function</th>
+                        <th style="width:45%"></th>
+                        <th style="width:45%">Description</th></tr>
+                <tr>
+                <tr>
+                        <td>onSave</td>
+                        <td><pre><code class="javascript">
+
+
+
+onSave:function(i){
+   document.querySelectorAll(".anno-this")[i.index].setAttribute('src',i.imagedata);
+}
+
+                                </code></pre></td>
+                        <td>function returns an Object<br>format: <br />  "annofilename" is the filename of the created png annotated layer. Can use this location to store in database. <br><br>"imagedata" is the base 64 datastring of the annotated image  <br /><br/> <strong>This function will not be called when the "filename" atribute of de image is not set.</strong></td>
+                </tr>
+                <tr>
+
+                </table>
+
+                <div class="developed-by">anno_modal has been developed by <a href="http://www.eyeflash.nl" target="_blank">Jan-Peter Bom</a>  -  <strong>Contact me</strong> for any support.</div>
+        </div>
+</body>
+</html>
+

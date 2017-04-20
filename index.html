@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anno Modal Example page</title>
+        <link rel="stylesheet" href="css/anno_modal.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body >
+        <div id="container">
+
+            <div class="intro" id="intro">
+                <span>Anno Modal <sup>1.0.0</sup></span>a Image Lightbox that provides a simple and nice way to create modal image dialogs that makes annotation possible.
+            </div>
+
+            <div id="features">
+                &#8226;&nbsp;&nbsp;Native Javascript: no Jquery, MooTools, Dojo, etc needed&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Easy to implement&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Fast&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Ready in minutes&nbsp;&nbsp;&#8226;&nbsp;&nbsp;PHP script included&nbsp;&nbsp;&#8226;&nbsp;&nbsp;Ai file included&nbsp;&nbsp;&#8226;&nbsp;&nbsp;For all pages
+            </div>
+            <br><br>
+
+            <div class="pagepart">
+                <div class="leftcenter">
+                    <div class="section">Key features :
+                    </div>
+                    <ul>
+                        <li>Easy installation</li>
+                        <li>Native No Jquery, MooTools, Dojo, etc needed</li>
+                        <li>Fast</li>
+                        <li>Annotate images with ease</li>
+                        <li>Original image is untouched, annotated layer is saved separately</li>
+                        <li>Browse easily between images on your page while making annotations</li>
+                        <li>Auto save</li>
+                        <li>use signature feature to capture signatures</li>
+                        <li>zoom to the original size</li>
+                        <li>Touch & mouse driven</li>
+                        <li>Lot of Options to control the Anno Modal</li>
+                    </ul>
+                </div><br>
+                <img src="images/1.png" width="400px;" height="245px" alt="Anno Modal">
+            </div>
+
+            <div class="pagepart">
+                <div class="intro">
+                    <span>Point out! Annotate! Mark!<sup></sup></span>Anno Modal is designed to encircle or mark areas of interest on top of any image.
+                </div>
+                <div class="row">
+                    Click image to try!<br>
+                    <div><img src="images/8_thb.jpg" height="300" alt="" filename="images/8.jpg" class="anno-this"></div>
+                    <div><img src="images/6_thb.jpg" height="300" alt="" filename="images/6.jpg" class="anno-this"></div>
+                </div>
+                <br><br>HTML (Use "filename" to store the original full size image location)
+                <textarea rows="4" class="rawcode">
+                <img src="images/6_thb.jpg" height="300" alt="" filename="images/6.jpg" class="anno-this">
+                <img src="images/6_thb.jpg" height="300" alt="" filename="images/6.jpg" class="anno-this">
+                </textarea>
+            </div>
+
+            <div class="pagepart">
+                <div class="intro">
+                    <span>Signature</span>Anno Modal Provides also an easy way to capture signatures on touch driven devices. <br>The signature will be stored with the given "signatueid" and can be used in any HTML document.
+                </div>
+                <br>
+                <br>
+                <div class="row">Click image to try!<br><div><img src="images/signature.png" width="500" alt="" filename="images/signature.png" signatureid="123456789" class="anno-this"></div></div>
+                <br><br>HTML (Use a unique "signatureid" to save the signature)
+                <textarea rows="4" class="rawcode"><img src="images/signature.png" width="500" alt="" filename="images/signature.png" signatureid="123456789" class="anno-this"></textarea>
+            </div>
+
+            <div class="pagepart">
+                <div class="intro">
+                    <span>Have Fun</span>Just an example to use Anno Modal:<br>Make a contest and let children finisch the drawing online and give the winner a nice present!
+                </div>
+                <div class="row">
+                    Click image to try!<br>
+                    <div><img src="images/11_thb.jpg" height="300" alt="" filename="images/11.png" annoid="give" class="anno-this"></div>
+                </div>
+                <br><br>HTML (use "annoid" to store the id of annotated image. by using "give" as value Anno Modal will provide a number for you. )
+                <textarea rows="4" class="rawcode"><img src="images/11_thb.jpg" height="300" alt="" filename="images/11.png" annoid="give" class="anno-this"></textarea>
+            </div>
+
+            <div class="pagepart">
+                <div class="intro">
+                    <span>The HTML</span>What does this page need to run Anno Modal.
+
+                </div>
+                Head of the page.
+                <textarea rows="4" class="rawcode">
+<head>
+    <link rel="stylesheet" href="css/anno_modal.css" type="text/css" />
+</head>
+                </textarea>
+                End of page
+                <textarea rows="11" class="rawcode"><script type="text/javascript" src="js/anno_modal_min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        anno_modal.init({
+            preloadAnotation:true,
+            onSave:function(i){
+            document.querySelectorAll(".anno-this")[i.index].setAttribute('src',i.imagedata);
+            }
+        });
+    });
+</script>
+    </textarea>
+            </div>
+
+        </div>
+    </body>
+    <script type="text/javascript" src="js/anno_modal_min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            anno_modal.init({
+                preloadAnotation:true,
+                onSave:function(i){
+                document.querySelectorAll(".anno-this")[i.index].setAttribute('src',i.imagedata);
+                }
+            });
+        });
+    </script>
+</html>
